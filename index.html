@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="M-PESA Shield is an independent digital safety education project."
+    >
+
+    <title>M-PESA Shield | Digital Safety</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+        <a
+            href="#"
+            class="brand"
+        >
+            M-PESA Shield
+        </a>
+
+
+        <nav>
+
+            <a href="#checker">
+                Check Message
+            </a>
+
+            <a href="#education">
+                Learn
+            </a>
+
+            <a href="#safety">
+                Safety
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="hero">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="badge">
+                DIGITAL SAFETY EDUCATION
+            </span>
+
+
+            <h1>
+                Think before you trust.
+            </h1>
+
+
+            <p>
+                Analyze suspicious messages and learn
+                how to recognize common digital-safety
+                warning signs.
+            </p>
+
+
+            <a
+                href="#checker"
+                class="primary-button"
+            >
+                Check a message
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="checker"
+    class="section"
+>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="eyebrow">
+                MESSAGE ANALYSIS
+            </span>
+
+
+            <h2>
+                Check a suspicious message
+            </h2>
+
+
+            <p>
+                Paste a message below. Never enter
+                PINs, OTPs, passwords or private
+                financial information.
+            </p>
+
+        </div>
+
+
+
+        <div class="checker-card">
+
+
+            <label for="message">
+                Message
+            </label>
+
+
+            <textarea
+                id="message"
+                maxlength="2000"
+                placeholder="Paste a suspicious message here..."
+            ></textarea>
+
+
+            <div class="input-footer">
+
+
+                <span id="characterCount">
+                    0 / 2000
+                </span>
+
+
+                <button
+                    id="analyzeBtn"
+                    class="primary-button"
+                    type="button"
+                >
+                    Analyze message
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            id="loading"
+            class="status-message hidden"
+        >
+            Analyzing message...
+        </div>
+
+
+
+        <div
+            id="error"
+            class="error-message hidden"
+            role="alert"
+        ></div>
+
+
+
+        <section
+            id="result"
+            class="result-card hidden"
+            aria-live="polite"
+        >
+
+
+            <div class="result-header">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        ANALYSIS RESULT
+                    </span>
+
+
+                    <h2 id="riskCategory">
+                        -
+                    </h2>
+
+                </div>
+
+
+                <div class="score">
+
+                    <span id="riskScore">
+                        0
+                    </span>
+
+                    <small>
+                        /100
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="result-section">
+
+                <h3>
+                    Why was this flagged?
+                </h3>
+
+
+                <ul id="reasons"></ul>
+
+            </div>
+
+
+
+            <div class="result-section">
+
+                <h3>
+                    What should you do?
+                </h3>
+
+
+                <ul id="recommendations"></ul>
+
+            </div>
+
+
+        </section>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="education"
+    class="section section-alt"
+>
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <span class="eyebrow">
+                DIGITAL SAFETY
+            </span>
+
+
+            <h2>
+                Learn before you lose
+            </h2>
+
+
+            <p>
+                Understanding common social-engineering
+                techniques can help you make safer decisions.
+            </p>
+
+        </div>
+
+
+
+        <div class="education-grid">
+
+
+            <article class="education-card">
+
+                <h3>
+                    Never share your PIN
+                </h3>
+
+                <p>
+                    Your PIN is private. Treat unexpected
+                    requests for it as a serious warning sign.
+                </p>
+
+            </article>
+
+
+
+            <article class="education-card">
+
+                <h3>
+                    Protect your OTP
+                </h3>
+
+                <p>
+                    Never disclose verification codes to
+                    unexpected callers or messages.
+                </p>
+
+            </article>
+
+
+
+            <article class="education-card">
+
+                <h3>
+                    Question urgency
+                </h3>
+
+                <p>
+                    Scammers may pressure you to act quickly
+                    before you have time to verify information.
+                </p>
+
+            </article>
+
+
+
+            <article class="education-card">
+
+                <h3>
+                    Verify independently
+                </h3>
+
+                <p>
+                    Use trusted official channels instead of
+                    contact details supplied by suspicious messages.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section
+    id="safety"
+    class="section"
+>
+
+    <div class="container safety-box">
+
+        <span class="eyebrow">
+            IMPORTANT
+        </span>
+
+
+        <h2>
+            Protect your private information
+        </h2>
+
+
+        <p>
+            M-PESA Shield is an independent educational
+            project. Never paste real PINs, OTPs,
+            passwords, account numbers or private
+            financial information into this application.
+        </p>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <div class="container">
+
+        <p>
+            M-PESA Shield is an independent educational
+            project and is not an official Safaricom service.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
