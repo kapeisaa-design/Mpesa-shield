@@ -103,7 +103,7 @@ function showLoading(isLoading) {
         analyzeButton.textContent =
             "Analyzing...";
 
-    } else {
+    } else { 
 
         loading.classList.add("hidden");
 
@@ -141,14 +141,17 @@ function escapeHtml(value) {
 */
 
 function createListItems(items) {
+    if (!Array.isArray(items)) {
+        return "";
+    }
 
     return items
-        .map(
-            item =>
-                `<li>${escapeHtml(item)}</li>`
-        )
+        .map(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            return li.outerHTML;
+        })
         .join("");
-
 }
 
 
