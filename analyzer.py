@@ -4,9 +4,7 @@ from typing import List
 
 @dataclass
 class AnalysisResult:
-    """
-    Represents the result returned by the message analyzer.
-    """
+    """Represents the result returned by the message analyzer."""
 
     score: int
     category: str
@@ -76,13 +74,48 @@ SUSPICIOUS_PATTERNS = {
             "The message appears to request a money transfer."
         ),
     },
+
+    "click the link": {
+        "weight": 25,
+        "reason": (
+            "The message encourages the user to click a link."
+        ),
+    },
+
+    "click here": {
+        "weight": 25,
+        "reason": (
+            "The message encourages the user to click a link."
+        ),
+    },
+
+   "blocked": {
+    "weight": 20,
+    "reason": (
+        "The message uses an account-blocking "
+        "threat to create urgency."
+    ),
+},
+
+    "transfer cash": {
+        "weight": 20,
+        "reason": (
+            "The message appears to request a cash transfer."
+        ),
+    },
+
+    "you have won": {
+        "weight": 20,
+        "reason": (
+            "The message claims that the user has won "
+            "a prize or reward."
+        ),
+    },
 }
 
 
 def get_category(score: int) -> str:
-    """
-    Convert a numerical score into a risk category.
-    """
+    """Convert a numerical score into a risk category."""
 
     if score >= 75:
         return "CRITICAL"
@@ -97,9 +130,7 @@ def get_category(score: int) -> str:
 
 
 def get_recommendations(category: str) -> List[str]:
-    """
-    Generate safety recommendations based on risk level.
-    """
+    """Generate safety recommendations based on risk level."""
 
     if category == "CRITICAL":
         return [
