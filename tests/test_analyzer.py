@@ -135,3 +135,39 @@ def test_case_insensitivity():
     )
 
     assert result.score >= 40
+
+def test_alternative_link_wording_is_detected():
+    result = analyze_message(
+        "You are clicking here to verify your account."
+    )
+
+    assert result.score == 40
+    assert result.category == "MEDIUM"
+
+
+def test_tap_here_is_detected():
+    result = analyze_message(
+        "Tap here to verify your account."
+    )
+
+    assert result.score == 40
+    assert result.category == "MEDIUM"
+
+
+def test_open_this_link_is_detected():
+    result = analyze_message(
+        "Open this link to claim your prize."
+    )
+
+    assert result.score == 45
+    assert result.category == "MEDIUM"
+
+
+def test_prize_scam_with_clicking_here_is_high_risk():
+    result = analyze_message(
+        "Congratulations! You have won a prize. "
+        "Claim your prize by clicking here."
+    )
+
+    assert result.score == 65
+    assert result.category == "HIGH"

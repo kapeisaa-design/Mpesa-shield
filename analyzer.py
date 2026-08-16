@@ -81,6 +81,26 @@ SUSPICIOUS_PATTERNS = {
             "The message encourages the user to click a link."
         ),
     },
+    "clicking here": {
+    "weight": 25,
+    "reason": (
+        "The message encourages the user to click a link."
+    ),
+},
+
+"tap here": {
+    "weight": 25,
+    "reason": (
+        "The message encourages the user to click a link."
+    ),
+},
+
+"open this link": {
+    "weight": 25,
+    "reason": (
+        "The message encourages the user to open a link."
+    ),
+},
 
     "click here": {
         "weight": 25,
